@@ -60,15 +60,25 @@ namespace MyMeetingPlanner.Models
         [Display(Name = "Closing Prayer")]
         public int? FkClosingPrayer { get; set; }
 
+        [Display(Name = "Closing Prayer")]
         public virtual Prayer FkClosingPrayerNavigation { get; set; }
+        [Display(Name = "Closing Hymn")]
         public virtual Hymn FkClosingSongNavigation { get; set; }
+        [Display(Name = "Conducting")]
         public virtual WardMember FkConductingNavigation { get; set; }
+        [Display(Name = "Intermediate Hymn")]
         public virtual Hymn FkIntermediateSongNavigation { get; set; }
+        [Display(Name = "Meeting Topic")]
         public virtual Topic FkMeetingTopicNavigation { get; set; }
+        [Display(Name = "Leading Music")]
         public virtual WardMember FkMusicLeaderNavigation { get; set; }
+        [Display(Name = "Playing Piano")]
         public virtual WardMember FkMusicPlayerNavigation { get; set; }
+        [Display(Name = "Opening Prayer")]
         public virtual Prayer FkOpenPrayerNavigation { get; set; }
+        [Display(Name = "Opening Hymn")]
         public virtual Hymn FkOpenSongNavigation { get; set; }
+        [Display(Name = "Sacrament Hymn")]
         public virtual Hymn FkSacramentSongNavigation { get; set; }
     }
 }

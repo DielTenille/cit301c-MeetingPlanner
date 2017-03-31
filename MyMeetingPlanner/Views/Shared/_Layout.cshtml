@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyMeetingPlanner</title>
+    <title>@ViewData["Title"] | My Meeting Planner</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -28,12 +28,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MyMeetingPlanner</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">My Meeting Planner</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="SacramentMeetings" asp-action="Index">SacramentMeetings</a></li>
+                    <li><a asp-area="" asp-controller="WardMembers" asp-action="Index">WardMembers</a></li>
+                    <li><a asp-area="" asp-controller="Speakers" asp-action="Index">Speakers</a></li>
                     <li><a asp-area="" asp-controller="Callings" asp-action="Index">Callings</a></li>
                     <li><a asp-area="" asp-controller="Hymns" asp-action="Index">Hymns</a></li>
                     <li><a asp-area="" asp-controller="Topics" asp-action="Index">Topics</a></li>
@@ -45,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - MyMeetingPlanner</p>
+            <p>&copy; 2017 - My Meeting Planner</p>
         </footer>
     </div>
 

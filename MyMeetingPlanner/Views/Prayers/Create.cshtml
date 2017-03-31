@@ -14,7 +14,9 @@
         <div class="form-group">
             <label asp-for="FkPrayerType" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="FkPrayerType" class ="form-control" asp-items="ViewBag.FkPrayerType"></select>
+                <select asp-for="FkPrayerType" class ="form-control" asp-items="ViewBag.FkPrayerType">
+                    <option value="">-- Select an Option --</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -27,7 +29,9 @@
         <div class="form-group">
             <label asp-for="FkWardMemberId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="FkWardMemberId" class ="form-control" asp-items="ViewBag.FkWardMemberId"></select>
+                <select asp-for="FkWardMemberId" class ="form-control" asp-items="ViewBag.FkWardMemberId">
+                    <option value="">-- Select an Option --</option>
+                </select>
             </div>
         </div>
         <div class="form-group">

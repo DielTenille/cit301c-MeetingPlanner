@@ -12,35 +12,11 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.SacramentDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BabyBlessing)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Confirmation)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FkYouthSpeaker)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FkFirstSpeaker)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FkSecondSpeaker)
-                </th>
             <th>
-                @Html.DisplayNameFor(model => model.FkClosingPrayerNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FkClosingSongNavigation)
+                @Html.DisplayNameFor(model => model.SacramentDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FkConductingNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FkIntermediateSongNavigation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FkMeetingTopicNavigation)
@@ -60,66 +36,99 @@
             <th>
                 @Html.DisplayNameFor(model => model.FkSacramentSongNavigation)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkYouthSpeaker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkFirstSpeaker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkIntermediateSongNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkSecondSpeaker)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FkClosingSongNavigation)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FkClosingPrayerNavigation)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.BabyBlessing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Confirmation)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SacramentDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BabyBlessing)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Confirmation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkYouthSpeaker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkFirstSpeaker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkSecondSpeaker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkClosingPrayerNavigation.PrayerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkClosingSongNavigation.HymnTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkConductingNavigation.Fname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkIntermediateSongNavigation.HymnTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkMeetingTopicNavigation.TopicTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkMusicLeaderNavigation.Fname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkMusicPlayerNavigation.Fname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkOpenPrayerNavigation.PrayerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkOpenSongNavigation.HymnTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkSacramentSongNavigation.HymnTitle)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SacramentMeetingId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SacramentMeetingId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SacramentMeetingId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SacramentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkConductingNavigation.Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkMeetingTopicNavigation.TopicTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkMusicLeaderNavigation.Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkMusicPlayerNavigation.Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkOpenPrayerNavigation.PrayerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkOpenSongNavigation.HymnTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkSacramentSongNavigation.HymnTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkYouthSpeaker)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkFirstSpeaker)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkIntermediateSongNavigation.HymnTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkSecondSpeaker)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkClosingSongNavigation.HymnTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkClosingPrayerNavigation.PrayerId)
+                </td>
+
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BabyBlessing)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Confirmation)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SacramentMeetingId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SacramentMeetingId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SacramentMeetingId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

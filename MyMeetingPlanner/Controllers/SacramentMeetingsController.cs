@@ -82,6 +82,7 @@ namespace MyMeetingPlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+
             ViewData["FkClosingPrayer"] = new SelectList(_context.Prayer, "PrayerId", "PrayerId", sacramentMeeting.FkClosingPrayer);
             ViewData["FkClosingSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle", sacramentMeeting.FkClosingSong);
             ViewData["FkConducting"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", sacramentMeeting.FkConducting);

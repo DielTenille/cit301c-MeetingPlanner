@@ -28,7 +28,9 @@
         <div class="form-group">
             <label asp-for="FkCallingId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="FkCallingId" class ="form-control" asp-items="ViewBag.FkCallingId"></select>
+                <select asp-for="FkCallingId" class ="form-control" asp-items="ViewBag.FkCallingId">
+                    <option value="">-- Select an Option --</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
