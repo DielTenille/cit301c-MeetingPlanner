@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyMeetingPlanner.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyMeetingPlanner
 {
@@ -28,6 +30,11 @@ namespace MyMeetingPlanner
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddDbContext<MeetingPlannerContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //var connection = @"Server=(localdb)\mssqllocaldb;Database=MeetingPlanner;Trusted_Connection=True;";
+            //services.AddDbContext<MeetingPlannerContext>(options => options.UseSqlServer(connection));
+
             services.AddMvc();
         }
 
