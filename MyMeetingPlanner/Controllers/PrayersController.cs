@@ -21,7 +21,9 @@ namespace MyMeetingPlanner.Controllers
         // GET: Prayers
         public async Task<IActionResult> Index()
         {
-            var meetingPlannerContext = _context.Prayer.Include(p => p.FkPrayerTypeNavigation).Include(p => p.FkWardMember);
+            var meetingPlannerContext = _context.Prayer
+                .Include(p => p.FkPrayerTypeNavigation)
+                .Include(p => p.FkWardMember);
             return View(await meetingPlannerContext.ToListAsync());
         }
 
@@ -49,7 +51,7 @@ namespace MyMeetingPlanner.Controllers
         public IActionResult Create()
         {
             ViewData["FkPrayerType"] = new SelectList(_context.PrayerType, "PrayerTypeId", "TypePrayer");
-            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "Fname");
+            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "FullName");
             return View();
         }
 
@@ -67,7 +69,7 @@ namespace MyMeetingPlanner.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["FkPrayerType"] = new SelectList(_context.PrayerType, "PrayerTypeId", "TypePrayer", prayer.FkPrayerType);
-            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", prayer.FkWardMemberId);
+            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", prayer.FkWardMemberId);
             return View(prayer);
         }
 
@@ -85,7 +87,7 @@ namespace MyMeetingPlanner.Controllers
                 return NotFound();
             }
             ViewData["FkPrayerType"] = new SelectList(_context.PrayerType, "PrayerTypeId", "TypePrayer", prayer.FkPrayerType);
-            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", prayer.FkWardMemberId);
+            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", prayer.FkWardMemberId);
             return View(prayer);
         }
 
@@ -122,7 +124,7 @@ namespace MyMeetingPlanner.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["FkPrayerType"] = new SelectList(_context.PrayerType, "PrayerTypeId", "TypePrayer", prayer.FkPrayerType);
-            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", prayer.FkWardMemberId);
+            ViewData["FkWardMemberId"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", prayer.FkWardMemberId);
             return View(prayer);
         }
 

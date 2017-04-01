@@ -51,7 +51,7 @@ namespace MyMeetingPlanner.Controllers
         {
             ViewData["FkSpeakerType"] = new SelectList(_context.SpeakerType, "SpeakerTypeId", "SpeakerType1");
             ViewData["FkTopic"] = new SelectList(_context.Topic, "TopicId", "TopicTitle");
-            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "Fname");
+            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "FullName");
             return View();
         }
 
@@ -70,7 +70,7 @@ namespace MyMeetingPlanner.Controllers
             }
             ViewData["FkSpeakerType"] = new SelectList(_context.SpeakerType, "SpeakerTypeId", "SpeakerType1", speaker.FkSpeakerType);
             ViewData["FkTopic"] = new SelectList(_context.Topic, "TopicId", "TopicTitle", speaker.FkTopic);
-            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", speaker.FkWardMember);
+            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", speaker.FkWardMember);
             return View(speaker);
         }
 
@@ -89,7 +89,7 @@ namespace MyMeetingPlanner.Controllers
             }
             ViewData["FkSpeakerType"] = new SelectList(_context.SpeakerType, "SpeakerTypeId", "SpeakerType1", speaker.FkSpeakerType);
             ViewData["FkTopic"] = new SelectList(_context.Topic, "TopicId", "TopicTitle", speaker.FkTopic);
-            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", speaker.FkWardMember);
+            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", speaker.FkWardMember);
             return View(speaker);
         }
 
@@ -127,7 +127,7 @@ namespace MyMeetingPlanner.Controllers
             }
             ViewData["FkSpeakerType"] = new SelectList(_context.SpeakerType, "SpeakerTypeId", "SpeakerType1", speaker.FkSpeakerType);
             ViewData["FkTopic"] = new SelectList(_context.Topic, "TopicId", "TopicTitle", speaker.FkTopic);
-            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", speaker.FkWardMember);
+            ViewData["FkWardMember"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", speaker.FkWardMember);
             return View(speaker);
         }
 

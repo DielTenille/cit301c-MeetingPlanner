@@ -27,8 +27,10 @@ namespace MyMeetingPlanner.Models
 
         [Display(Name = "Speaker Type")]
         public virtual SpeakerType FkSpeakerTypeNavigation { get; set; }
+
         [Display(Name = "Topic")]
         public virtual Topic FkTopicNavigation { get; set; }
+
         [Display(Name = "Name")]
         public virtual WardMember FkWardMemberNavigation { get; set; }
     }

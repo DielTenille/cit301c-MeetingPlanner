@@ -21,7 +21,17 @@ namespace MyMeetingPlanner.Controllers
         // GET: SacramentMeetings
         public async Task<IActionResult> Index()
         {
-            var meetingPlannerContext = _context.SacramentMeeting.Include(s => s.FkClosingPrayerNavigation).Include(s => s.FkClosingSongNavigation).Include(s => s.FkConductingNavigation).Include(s => s.FkIntermediateSongNavigation).Include(s => s.FkMeetingTopicNavigation).Include(s => s.FkMusicLeaderNavigation).Include(s => s.FkMusicPlayerNavigation).Include(s => s.FkOpenPrayerNavigation).Include(s => s.FkOpenSongNavigation).Include(s => s.FkSacramentSongNavigation);
+            var meetingPlannerContext = _context.SacramentMeeting
+                .Include(s => s.FkClosingPrayerNavigation)
+                .Include(s => s.FkClosingSongNavigation)
+                .Include(s => s.FkConductingNavigation)
+                .Include(s => s.FkIntermediateSongNavigation)
+                .Include(s => s.FkMeetingTopicNavigation)
+                .Include(s => s.FkMusicLeaderNavigation)
+                .Include(s => s.FkMusicPlayerNavigation)
+                .Include(s => s.FkOpenPrayerNavigation)
+                .Include(s => s.FkOpenSongNavigation)
+                .Include(s => s.FkSacramentSongNavigation);
             return View(await meetingPlannerContext.ToListAsync());
         }
 
@@ -56,14 +66,14 @@ namespace MyMeetingPlanner.Controllers
         // GET: SacramentMeetings/Create
         public IActionResult Create()
         {
-            ViewData["FkClosingPrayer"] = new SelectList(_context.Prayer, "PrayerId", "PrayerId");
+            ViewData["FkClosingPrayer"] = new SelectList(_context.Prayer, "PrayerId", "FkWardMember.FullName");
             ViewData["FkClosingSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle");
-            ViewData["FkConducting"] = new SelectList(_context.WardMember, "WardMemberId", "Fname");
+            ViewData["FkConducting"] = new SelectList(_context.WardMember, "WardMemberId", "FullName");
             ViewData["FkIntermediateSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle");
             ViewData["FkMeetingTopic"] = new SelectList(_context.Topic, "TopicId", "TopicTitle");
-            ViewData["FkMusicLeader"] = new SelectList(_context.WardMember, "WardMemberId", "Fname");
-            ViewData["FkMusicPlayer"] = new SelectList(_context.WardMember, "WardMemberId", "Fname");
-            ViewData["FkOpenPrayer"] = new SelectList(_context.Prayer, "PrayerId", "PrayerId");
+            ViewData["FkMusicLeader"] = new SelectList(_context.WardMember, "WardMemberId", "FullName");
+            ViewData["FkMusicPlayer"] = new SelectList(_context.WardMember, "WardMemberId", "FullName");
+            ViewData["FkOpenPrayer"] = new SelectList(_context.Prayer, "PrayerId", "FkWardMember.FullName");
             ViewData["FkOpenSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle");
             ViewData["FkSacramentSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle");
             return View();
@@ -109,14 +119,14 @@ namespace MyMeetingPlanner.Controllers
             {
                 return NotFound();
             }
-            ViewData["FkClosingPrayer"] = new SelectList(_context.Prayer, "PrayerId", "PrayerId", sacramentMeeting.FkClosingPrayer);
+            ViewData["FkClosingPrayer"] = new SelectList(_context.Prayer, "PrayerId", "FkWardMember.FullName", sacramentMeeting.FkClosingPrayer);
             ViewData["FkClosingSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle", sacramentMeeting.FkClosingSong);
-            ViewData["FkConducting"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", sacramentMeeting.FkConducting);
+            ViewData["FkConducting"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", sacramentMeeting.FkConducting);
             ViewData["FkIntermediateSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle", sacramentMeeting.FkIntermediateSong);
             ViewData["FkMeetingTopic"] = new SelectList(_context.Topic, "TopicId", "TopicTitle", sacramentMeeting.FkMeetingTopic);
-            ViewData["FkMusicLeader"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", sacramentMeeting.FkMusicLeader);
-            ViewData["FkMusicPlayer"] = new SelectList(_context.WardMember, "WardMemberId", "Fname", sacramentMeeting.FkMusicPlayer);
-            ViewData["FkOpenPrayer"] = new SelectList(_context.Prayer, "PrayerId", "PrayerId", sacramentMeeting.FkOpenPrayer);
+            ViewData["FkMusicLeader"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", sacramentMeeting.FkMusicLeader);
+            ViewData["FkMusicPlayer"] = new SelectList(_context.WardMember, "WardMemberId", "FullName", sacramentMeeting.FkMusicPlayer);
+            ViewData["FkOpenPrayer"] = new SelectList(_context.Prayer, "PrayerId", "FkWardMember.FullName", sacramentMeeting.FkOpenPrayer);
             ViewData["FkOpenSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle", sacramentMeeting.FkOpenSong);
             ViewData["FkSacramentSong"] = new SelectList(_context.Hymn, "HymnId", "HymnTitle", sacramentMeeting.FkSacramentSong);
             return View(sacramentMeeting);

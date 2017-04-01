@@ -28,10 +28,10 @@ namespace MyMeetingPlanner.Models
         public int? FkMeetingTopic { get; set; }
 
         [Display(Name = "Baby Blessing?")]
-        public bool? BabyBlessing { get; set; }
+        public bool BabyBlessing { get; set; }
 
         [Display(Name = "Confirmation?")]
-        public bool? Confirmation { get; set; }
+        public bool Confirmation { get; set; }
 
         [Display(Name = "Opening Prayer")]
         public int? FkOpenPrayer { get; set; }
@@ -60,10 +60,7 @@ namespace MyMeetingPlanner.Models
         [Display(Name = "Closing Prayer")]
         public int? FkClosingPrayer { get; set; }
 
-        [Display(Name = "Closing Prayer")]
-        public virtual Prayer FkClosingPrayerNavigation { get; set; }
-        [Display(Name = "Closing Hymn")]
-        public virtual Hymn FkClosingSongNavigation { get; set; }
+       
         [Display(Name = "Conducting")]
         public virtual WardMember FkConductingNavigation { get; set; }
         [Display(Name = "Intermediate Hymn")]
@@ -80,5 +77,9 @@ namespace MyMeetingPlanner.Models
         public virtual Hymn FkOpenSongNavigation { get; set; }
         [Display(Name = "Sacrament Hymn")]
         public virtual Hymn FkSacramentSongNavigation { get; set; }
+        [Display(Name = "Closing Prayer")]
+        public virtual Prayer FkClosingPrayerNavigation { get; set; }
+        [Display(Name = "Closing Hymn")]
+        public virtual Hymn FkClosingSongNavigation { get; set; }
     }
 }
