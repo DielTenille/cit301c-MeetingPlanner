@@ -1,7 +1,7 @@
 @model MyMeetingPlanner.Models.WardMember
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Member Details";
 }
 
 <h2>Details</h2>
@@ -11,16 +11,10 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Fname)
+            @Html.DisplayNameFor(model => model.FullName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Fname)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Lname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Lname)
+            @Html.DisplayFor(model => model.FullName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.FkCalling)

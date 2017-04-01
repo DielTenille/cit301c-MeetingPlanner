@@ -35,6 +35,7 @@ namespace MyMeetingPlanner.Controllers
 
             var wardMember = await _context.WardMember
                 .Include(w => w.FkCalling)
+                .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.WardMemberId == id);
             if (wardMember == null)
             {

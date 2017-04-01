@@ -17,9 +17,9 @@ namespace MyMeetingPlanner.Models
 
         [Required]
         [Display(Name = "Prayer Type")]
-        [StringLength(100, ErrorMessage = "Type is required.")]
         public int FkPrayerType { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Date of Prayer")]
         public DateTime PrayerDate { get; set; }
 
@@ -28,7 +28,9 @@ namespace MyMeetingPlanner.Models
 
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkClosingPrayerNavigation { get; set; }
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkOpenPrayerNavigation { get; set; }
+        [Display(Name = "Prayer Type")]
         public virtual PrayerType FkPrayerTypeNavigation { get; set; }
+        [Display(Name = "Name")]
         public virtual WardMember FkWardMember { get; set; }
     }
 }

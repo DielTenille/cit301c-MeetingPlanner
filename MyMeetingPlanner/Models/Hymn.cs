@@ -33,6 +33,7 @@ namespace MyMeetingPlanner.Models
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkIntermediateSongNavigation { get; set; }
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkOpenSongNavigation { get; set; }
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkSacramentSongNavigation { get; set; }
+        [Display(Name = "Hymn Type")]
         public virtual HymnType FkHymnTypeNavigation { get; set; }
     }
 }

@@ -45,6 +45,8 @@ namespace MyMeetingPlanner.Models
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkMusicLeaderNavigation { get; set; }
         public virtual ICollection<SacramentMeeting> SacramentMeetingFkMusicPlayerNavigation { get; set; }
         public virtual ICollection<Speaker> Speaker { get; set; }
+
+        [Display(Name = "Calling")]
         public virtual Calling FkCalling { get; set; }
     }
 }
